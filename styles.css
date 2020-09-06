@@ -5,7 +5,8 @@
    position: relative;
  }
 
- .carousel .carousel-item {
+ .carousel .carousel-item,
+ .carousel .carousel-item .carousel-item-hidden {  
    display: none;
  }
 

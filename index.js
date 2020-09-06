@@ -1,4 +1,4 @@
-console.log("All Hooked up!")
+
 
 //grab all carousel items:
 
@@ -12,7 +12,16 @@ const previousButton = document.querySelector('#carousel-button-prev')
 
 const nextButton = document.querySelector('#carousel-button-next')
 
+const hideAllSlides = () => {
+  for ( let slide of slides ) {
+    slide.classList.remove('carousel-item-visible')
+    slide.classList.add('carousel-item-hidden')
+  }
+}
+
 const moveToNextSlide = () => {
+  hideAllSlides()
+
   if ( slidePosition === totalSlides - 1 ) {
     slidePosition = 0
   } else {
@@ -24,6 +33,8 @@ const moveToNextSlide = () => {
 const moveToPrevSlide = () => {
   console.log("Next button was clicked")
 }
+
+
 
 nextButton.addEventListener('click', moveToNextSlide)
 previousButton.addEventListener('click', moveToPrevSlide)
